@@ -54,6 +54,13 @@ let setperso =()=>{
     )
 
 
+    if(Class.mage.pointDeVie + Class.guerrier.pointDeVie > 49) {
+        alert('non non bg tu as que 50  pour les trois ')
+    }
+    else(
+        Class.archer.pointDeVie = +prompt( ` indique moi les pa de ${Class.archer.nom} `)
+        
+    )
 }
 
 
