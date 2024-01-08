@@ -3,12 +3,10 @@ export class Boss {
         this.nom = nom;
         this.pointDeVie = pointDeVie;
         this.pointDattaque =pointDattaque
-
-
     }
-
-
 }
 
 
-let Boss1 = new Boss()
+let Sauron = new Boss("Sauron",150,10)
+
+
