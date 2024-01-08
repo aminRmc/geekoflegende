@@ -103,7 +103,25 @@ console.log(monster.pointDeVie);
 
 let combat =()=> {
     while (monster.pointDeVie > 0) {
-      
+        Class.guerrier.specialite += 1
+        Class.mage.specialite -= 1
+        Class.archer.specialite -=1
+        if (Class.guerrier.pointDeVie > 0) {
+            if (Class.guerrier.specialie = 7) {
+                monster.pointDeVie -= Class.guerrier.pointDeVie    
+                Class.guerrier.specialite = 0
+                
+            }
+            monster.pointDeVie -= Class.guerrier.pointDeVie
+
+        }
+        else {
+            alert(`vous avez perdu ${Class.guerrier.nom}`)
+      }
+
+
+
+
 
 
 
