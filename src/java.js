@@ -75,7 +75,7 @@ let setperso =()=>{
 
 
 let random = Math.round(Math.random() * (3 - 1)) + 1;
-console.log(random);
+
   
   
 
@@ -103,16 +103,20 @@ console.log(monster.pointDeVie);
 
 let combat =()=> {
     while (monster.pointDeVie > 0) {
-        Class.guerrier.specialite += 1
-        Class.mage.specialite -= 1
-        Class.archer.specialite -=1
+       
+         if (Class.guerrier.pointDeVie < 1 % Class.mage.pointDeVie < 1 & Class.archer.pointDeVie < 1 ) {
+            alert(`vous avez perdu`)
+            break
+         }
+        
+
         if (Class.guerrier.pointDeVie > 0) {
-            if (Class.guerrier.specialie = 7) {
+            if (Class.guerrier.specialite = 7) {
                 monster.pointDeVie -= Class.guerrier.pointDeVie    
                 Class.guerrier.specialite = 0
                 
             }
-            monster.pointDeVie -= Class.guerrier.pointDeVie
+            monster.pointDeVie -= Class.guerrier.pointDattaque
 
         }
         else {
@@ -126,7 +130,7 @@ let combat =()=> {
 
         if (Class.mage.pointDeVie > 0) {
             if (Class.mage.specialite = 0) {
-                monster.pointDeVie -= Class.guerrier.pointDeVie    
+                monster.pointDeVie -= Class.guerrier.pointDattaque
                 Class.mage.specialite = 7
                 
             }
@@ -145,11 +149,11 @@ let combat =()=> {
 
         if (Class.archer.pointDeVie > 0) {
             if (Class.archer.specialite =0 ) {
-                monster.pointDeVie -= Class.guerrier.pointDeVie    
+                monster.pointDeVie -= Class.guerrier.pointDattaque 
                 Class.archer.specialite = 6 
                
             }
-            monster.pointDeVie -= Class.archer.pointDeVie
+            monster.pointDeVie -=  Class.archer.pointDeVie
 
         }
         else {
@@ -157,10 +161,19 @@ let combat =()=> {
         }
 
 
+        let random2 = Math.round(Math.random() * (3 - 1)) + 1;
+    
+        if (monster.pointDeVie > 0) {
+         
 
-
-
-      
+        }
+        else {
+              alert(`vous avez gagnez`)
+              break
+        }
+        Class.guerrier.specialite += 1
+        Class.mage.specialite -= 1
+        Class.archer.specialite -=1
     }
     
 }
