@@ -67,3 +67,21 @@ let setperso =()=>{
   let getRandomInt =(max) => {
     return Math.floor(Math.random() * max);
   }
+   let bos = ()=>{
+    getRandomInt(3)
+    let Monster = ''
+    if (getRandomInt = 1 ) {
+         Monster = Class.Sauron
+        
+    }
+    else if (getRandomInt = 2) {
+         Monster = Class.Chronos
+    }
+    else(
+        Monster = Class.Lilith
+    )
+    console.log(Monster);
+   }
+
+bos()
+setperso()
