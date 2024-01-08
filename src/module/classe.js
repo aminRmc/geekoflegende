@@ -24,6 +24,7 @@ export class Hero {
 
 
 let guerrier = new Hero('luffy','attack',150,20)
+let mage = new Hero('Nami','attack',120,10)
 
 
 
