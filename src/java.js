@@ -102,7 +102,9 @@ console.log(monster.pointDeVie);
 
 
 let combat =()=> {
-  
+    while (monster.pointDeVie > 0) {
+      
+
 
 
 
