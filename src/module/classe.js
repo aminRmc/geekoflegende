@@ -13,4 +13,15 @@ let Lilith = new Boss("Lilith",180,8)
 
 
 
+export class Hero {
+    constructor(nom,postureDeCombat,pointDeVie,pointDattaque) {
+        this.nom = nom;
+        this.pointDeVie = pointDeVie;
+        this.pointDattaque =pointDattaque
+        this.postureDeCombat = postureDeCombat
+    }
+}
+
+
+
 
