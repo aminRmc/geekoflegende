@@ -119,9 +119,7 @@ let combat =()=> {
             monster.pointDeVie -= Class.guerrier.pointDattaque
 
         }
-        else {
-            alert(`vous avez perdu ${Class.guerrier.nom}`)
-      }
+       
 
 
 
@@ -130,16 +128,17 @@ let combat =()=> {
 
         if (Class.mage.pointDeVie > 0) {
             if (Class.mage.specialite = 0) {
-                monster.pointDeVie -= Class.guerrier.pointDattaque
+                alert(`le mage recharge`)
                 Class.mage.specialite = 7
                 
             }
-            monster.pointDeVie -= Class.mage.pointDeVie
+            else{
+                monster.pointDeVie -= Class.mage.pointDattaque
+            }
+            
 
         }
-        else {
-            alert(`vous avez perdu ${Class.mage.nom}`)
-      }
+      
 
 
 
@@ -149,16 +148,17 @@ let combat =()=> {
 
         if (Class.archer.pointDeVie > 0) {
             if (Class.archer.specialite =0 ) {
-                monster.pointDeVie -= Class.guerrier.pointDattaque 
+                alert(`le archer recharge`)
                 Class.archer.specialite = 6 
                
             }
-            monster.pointDeVie -=  Class.archer.pointDeVie
+            else{
+                monster.pointDeVie -=  Class.archer.pointDattaque
+            }
+           
 
         }
-        else {
-              alert(`vous avez perdu ${Class.archer.nom}`)
-        }
+       
 
 
         let random2 = Math.round(Math.random() * (3 - 1)) + 1;
@@ -168,13 +168,11 @@ let combat =()=> {
                 Class.archer.pointDeVie -= monster.pointDattaque
             }
             if (random2 == 2) {
-                Class.a.pointDeVie -= monster.pointDattaque
+                Class.mage.pointDeVie -= monster.pointDattaque
             }
             if (random2 == 1) {
-                Class.archer.pointDeVie -= monster.pointDattaque
+                Class.guerrier.pointDeVie -= monster.pointDattaque
             }
-            
-
         }
         else {
               alert(`vous avez gagnez`)
