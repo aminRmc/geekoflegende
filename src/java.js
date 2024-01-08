@@ -143,7 +143,20 @@ let combat =()=> {
 
 
 
-   
+        if (Class.archer.pointDeVie > 0) {
+            if (Class.archer.specialite =0 ) {
+                monster.pointDeVie -= Class.guerrier.pointDeVie    
+                Class.archer.specialite = 6 
+               
+            }
+            monster.pointDeVie -= Class.archer.pointDeVie
+
+        }
+        else {
+              alert(`vous avez perdu ${Class.archer.nom}`)
+        }
+
+
 
 
 
