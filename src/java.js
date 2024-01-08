@@ -11,77 +11,104 @@ let setperso =()=>{
 
     Class.archer.nom = prompt("donne le nom de l'archer")
 
+    let stats =() =>{
+        alert('Maintenant repartison les point de pv tu en as 250 pv')
 
-    alert('Maintenant repartison les point de pv tu en as 250 pv')
-
-    Class.guerrier.pointDeVie = +prompt( ` indique moi les pv de ${Class.guerrier.nom} `)
-
-    if (Class.guerrier.pointDeVie > 249) {
-        alert("non non pas plus de 250")
+        Class.guerrier.pointDeVie = +prompt( ` indique moi les pv de ${Class.guerrier.nom} `)
+    
+        if (Class.guerrier.pointDeVie > 249) {
+            alert("non non pas plus de 250")
+            return stats()
+            
+        }
+        else(
+            Class.mage.pointDeVie = +prompt( ` indique moi les pv de ${Class.mage.nom} `)
+            
+        )
+    
+    
+        if(Class.mage.pointDeVie + Class.guerrier.pointDeVie > 249) {
+            alert('non non bg tu as que 250 pv pour les trois ')
+            return stats()
+        }
+        else(
+            Class.archer.pointDeVie = +prompt( ` indique moi les pv de ${Class.archer.nom} `)
+            
+        )
+    
+    
+    
+    
+    
+        alert("Maintenant repartison les point de point d'attack tu en as 50 ")
+    
+        Class.guerrier.pointDattaque = +prompt( ` indique moi les pa de ${Class.guerrier.nom} `)
+    
+        if (Class.guerrier.pointDeVie > 49) {
+            alert("non non pas plus de 50")
+            return stats()
+            
+        }
+        else(
+            Class.mage.pointDeVie = +prompt( ` indique moi les pa de ${Class.mage.nom} `)
+    
+            
+        )
+    
+    
+        if(Class.mage.pointDeVie + Class.guerrier.pointDeVie > 49) {
+            alert('non non bg tu as que 50  pour les trois ')
+            return stats()
+            
+        }
+        else(
+            Class.archer.pointDeVie = +prompt( ` indique moi les pa de ${Class.archer.nom} `)
+            
+            
+        )
         
     }
-    else(
-        Class.mage.pointDeVie = +prompt( ` indique moi les pv de ${Class.mage.nom} `)
-
-        
-    )
-
-
-    if(Class.mage.pointDeVie + Class.guerrier.pointDeVie > 249) {
-        alert('non non bg tu as que 250 pv pour les trois ')
-    }
-    else(
-        Class.archer.pointDeVie = +prompt( ` indique moi les pv de ${Class.archer.nom} `)
-        
-    )
-
-
-
-
-
-    alert("Maintenant repartison les point de point d'attack tu en as 50 ")
-
-    Class.guerrier.pointDattaque = +prompt( ` indique moi les pa de ${Class.guerrier.nom} `)
-
-    if (Class.guerrier.pointDeVie > 49) {
-        alert("non non pas plus de 50")
-        
-    }
-    else(
-        Class.mage.pointDeVie = +prompt( ` indique moi les pa de ${Class.mage.nom} `)
-
-        
-    )
-
-
-    if(Class.mage.pointDeVie + Class.guerrier.pointDeVie > 49) {
-        alert('non non bg tu as que 50  pour les trois ')
-    }
-    else(
-        Class.archer.pointDeVie = +prompt( ` indique moi les pa de ${Class.archer.nom} `)
-        
-    )
+ 
+    stats()
 }
 
 
-  let getRandomInt =(max) => {
-    return Math.floor(Math.random() * max);
-  }
-   let bos = ()=>{
-    getRandomInt(3)
-    let Monster = ''
-    if (getRandomInt = 1 ) {
-         Monster = Class.Sauron
-        
-    }
-    else if (getRandomInt = 2) {
-         Monster = Class.Chronos
-    }
-    else(
-        Monster = Class.Lilith
-    )
-    console.log(Monster);
-   }
 
-bos()
+let random = Math.round(Math.random() * (3 - 1)) + 1;
+console.log(random);
+  
+  
+
+
+
+
+
 setperso()
+
+
+let monster = ''
+if (random == 1) {
+        monster = Class.Sauron
+    
+}
+else if (random == 2) {
+        monster = Class.Chronos
+}
+else(
+    monster = Class.Lilith
+)
+alert(`ton ennemie est ${monster.nom}`)
+console.log(monster.pointDeVie);
+
+
+let combat =()=> {
+  
+
+
+
+      
+    }
+    
+}
+
+combat()
