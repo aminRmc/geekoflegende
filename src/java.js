@@ -124,6 +124,27 @@ let combat =()=> {
 
 
 
+        if (Class.mage.pointDeVie > 0) {
+            if (Class.mage.specialite = 0) {
+                monster.pointDeVie -= Class.guerrier.pointDeVie    
+                Class.mage.specialite = 7
+                
+            }
+            monster.pointDeVie -= Class.mage.pointDeVie
+
+        }
+        else {
+            alert(`vous avez perdu ${Class.mage.nom}`)
+      }
+
+
+
+
+
+
+
+   
+
 
 
       
