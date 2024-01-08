@@ -164,7 +164,16 @@ let combat =()=> {
         let random2 = Math.round(Math.random() * (3 - 1)) + 1;
     
         if (monster.pointDeVie > 0) {
-         
+            if (random2 == 1) {
+                Class.archer.pointDeVie -= monster.pointDattaque
+            }
+            if (random2 == 2) {
+                Class.a.pointDeVie -= monster.pointDattaque
+            }
+            if (random2 == 1) {
+                Class.archer.pointDeVie -= monster.pointDattaque
+            }
+            
 
         }
         else {
