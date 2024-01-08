@@ -16,7 +16,7 @@ let setperso =()=>{
 
         Class.guerrier.pointDeVie = +prompt( ` indique moi les pv de ${Class.guerrier.nom} `)
     
-        if (Class.guerrier.pointDeVie > 249) {
+        if (Class.guerrier.pointDeVie > 250) {
             alert("non non pas plus de 250")
             return stats()
             
@@ -27,7 +27,7 @@ let setperso =()=>{
         )
     
     
-        if(Class.mage.pointDeVie + Class.guerrier.pointDeVie > 249) {
+        if(Class.mage.pointDeVie + Class.guerrier.pointDeVie > 250) {
             alert('non non bg tu as que 250 pv pour les trois ')
             return stats()
         }
@@ -44,7 +44,7 @@ let setperso =()=>{
     
         Class.guerrier.pointDattaque = +prompt( ` indique moi les pa de ${Class.guerrier.nom} `)
     
-        if (Class.guerrier.pointDeVie > 49) {
+        if (Class.guerrier.pointDeVie > 50) {
             alert("non non pas plus de 50")
             return stats()
             
@@ -56,7 +56,7 @@ let setperso =()=>{
         )
     
     
-        if(Class.mage.pointDeVie + Class.guerrier.pointDeVie > 49) {
+        if(Class.mage.pointDeVie + Class.guerrier.pointDeVie > 50) {
             alert('non non bg tu as que 50  pour les trois ')
             return stats()
             
@@ -81,7 +81,7 @@ let random = Math.round(Math.random() * (3 - 1)) + 1;
 
 
 
-
+alert(`Bienvenu sur GeekOfLegend`)
 
 setperso()
 
@@ -112,17 +112,17 @@ let combat =()=> {
 
         if (Class.guerrier.pointDeVie > 0) {
             if (Class.guerrier.specialite = 7) {
-                monster.pointDeVie -= Class.guerrier.pointDeVie    
+                monster.pointDeVie -= (Class.guerrier.pointDeVie*100/20)    
                 Class.guerrier.specialite = 0
                 
             }
-            monster.pointDeVie -= Class.guerrier.pointDattaque
+            else{
+                monster.pointDeVie -= Class.guerrier.pointDattaque
+            }
+            
 
         }
        
-
-
-
 
 
 
@@ -148,7 +148,7 @@ let combat =()=> {
 
         if (Class.archer.pointDeVie > 0) {
             if (Class.archer.specialite =0 ) {
-                alert(`le archer recharge`)
+                alert(`l'archer recharge`)
                 Class.archer.specialite = 6 
                
             }

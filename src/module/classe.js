@@ -7,9 +7,9 @@ export class Boss {
 }
 
 
-export let Sauron = new Boss("Sauron",420,10)
-export let Chronos = new Boss("Chronos",350,18)
-export let Lilith = new Boss("Lilith",540,8)
+export let Sauron = new Boss("Sauron",800,10)
+export let Chronos = new Boss("Chronos",700,18)
+export let Lilith = new Boss("Lilith",600,8)
 
 
 
@@ -24,8 +24,8 @@ export class Hero {
 }
 
 
-export let guerrier = new Hero('luffy','attack',150,20,0)
-export let mage = new Hero('Nami','attack',120,10,7)
-export let archer = new Hero('Ussop','attack',130,15,6)
+export let guerrier = new Hero('luffy','attack',0,0,0)
+export let mage = new Hero('Nami','attack',0,0,7)
+export let archer = new Hero('Ussop','attack',0,0,6)
 
 
