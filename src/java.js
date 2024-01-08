@@ -37,3 +37,24 @@ let setperso =()=>{
 
 
 
+
+
+    alert("Maintenant repartison les point de point d'attack tu en as 50 ")
+
+    Class.guerrier.pointDattaque = +prompt( ` indique moi les pa de ${Class.guerrier.nom} `)
+
+    if (Class.guerrier.pointDeVie > 49) {
+        alert("non non pas plus de 50")
+        
+    }
+    else(
+        Class.mage.pointDeVie = +prompt( ` indique moi les pa de ${Class.mage.nom} `)
+
+        
+    )
+
+
+}
+
+
+  
