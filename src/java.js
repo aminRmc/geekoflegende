@@ -2,7 +2,7 @@ import * as Class from './module/classe.js';
 
 
 
-let setperso =()=>{
+let setperso =()=>{  //add the name,pv,pa of heros
     Class.guerrier.nom = prompt('donnez le nom du guerrier')
     
     
@@ -112,7 +112,7 @@ console.log(monster.pointDeVie);
 
 
 
-let enigme = ()=>{
+let enigme = ()=>{ // take a random riddle 
 
     switch ( Math.round(Math.random() * (3 - 1)) + 1) {
        case 1:
@@ -131,13 +131,6 @@ let enigme = ()=>{
             alert(`bien joue`)
            }
           }
-
-
-
-
-
-
-
            break;
 
 
@@ -195,7 +188,7 @@ let enigme = ()=>{
 
 
 
-   let attackGerrier=()=>{
+   let attackGerrier=()=>{ //attack of guerrier
 
 
     if (Class.guerrier.pointDeVie > 0) {
@@ -241,7 +234,7 @@ let enigme = ()=>{
 
 
 
-   let attackMage = () =>{
+   let attackMage = () =>{//attack of Mage
 
     if (Class.mage.pointDeVie > 0) {        
         let positionM = prompt(`choisis la position de combat du guerrier attack/defense`)
@@ -284,7 +277,7 @@ let enigme = ()=>{
 
 
 
-   let attackArcher = ()=>{
+   let attackArcher = ()=>{//attack of Archer
 
 
     if (Class.archer.pointDeVie > 0) {
@@ -338,7 +331,7 @@ let enigme = ()=>{
 
 
 let pdvBoss = monster.pointDeVie
-let combat =()=> {
+let combat =()=> {  // the final fight 
     while (monster.pointDeVie > 0) {
 
 

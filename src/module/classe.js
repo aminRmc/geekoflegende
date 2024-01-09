@@ -1,4 +1,4 @@
-export class Boss {
+export class Boss { //the classe for the boss
     constructor(nom,pointDeVie,pointDattaque) {
         this.nom = nom;
         this.pointDeVie = pointDeVie;
@@ -13,7 +13,7 @@ export let Lilith = new Boss("Lilith",950,16)
 
 
 
-export class Hero {
+export class Hero { // classe for heros
     constructor(nom,postureDeCombat,pointDeVie,pointDattaque,specialite) {
         this.nom = nom;
         this.pointDeVie = pointDeVie;
