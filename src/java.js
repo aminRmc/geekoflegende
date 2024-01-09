@@ -209,14 +209,15 @@ let enigme = ()=>{ // take a random riddle
                 case "attack":
             
                    
-                        if (Class.guerrier.specialite = 7) {
-                            
+                        if (Class.guerrier.specialite == 7) {
+                            alert(`attack du phoenix...`)
                             monster.pointDeVie -= (Class.guerrier.pointDeVie*1.40)   
                             Class.guerrier.specialite = 0
                             
                         }
                         else{
-                            alert(`attack du phoenix...`)
+                            
+                            alert(`${Class.archer.nom} Avance`)
                             monster.pointDeVie -= (Class.guerrier.pointDeVie*1.20) 
                         }
                         
@@ -226,7 +227,6 @@ let enigme = ()=>{ // take a random riddle
                 default:
                     alert(`on as dit attack ou defense !!`)
                     return attackGerrier();
-                   
             }}
    }
 
@@ -261,6 +261,7 @@ let enigme = ()=>{ // take a random riddle
                                 
                             }
                             else{
+                                alert(`${Class.mage.nom} Avance`)
                                 monster.pointDeVie -= (Class.mage.pointDattaque*1.20)
                             }
                             
@@ -306,6 +307,7 @@ let enigme = ()=>{ // take a random riddle
                        
                     }
                     else{
+                        alert(`${Class.archer.nom} Avance`)
                         monster.pointDeVie -=  (Class.archer.pointDattaque*1.2)
                     }
                    
@@ -431,11 +433,6 @@ let combat =()=> {  // the final fight
 }
 
 combat()
-
-
-
-
-
 
 
 
