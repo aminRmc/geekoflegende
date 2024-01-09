@@ -118,14 +118,17 @@ let enigme = ()=>{
        case 1:
            let reponse = prompt(`Qu'est-ce qui peut être dans la mer et dans le ciel ?`)
            let cont = 1
-          while (reponse =! `etoile`) {
+          while (reponse != `etoile`) {
            
 
            reponse = prompt(`Qu'est-ce qui peut être dans la mer et dans le ciel ?`)
-           cont =+ 1
+           cont += 1
            if (cont == 3) {
-               alert=(`vous avez perdue`)
+               alert(`vous avez perdue`)
                break
+           }else if (reponse == `etoile`) {
+            monster.pointDeVie =0
+            alert(`bien joue`)
            }
           }
 
@@ -143,14 +146,18 @@ let enigme = ()=>{
 
        let reponse2= prompt("Qu'est-ce qui commence la nuit et termine le matin ?")
        let cont2 = 1
-      while (reponse =! `n`) {
+      while (reponse2 != `n`) {
        
 
        reponse2 = prompt("Qu'est-ce qui commence la nuit et termine le matin ?")
-       cont2 =+ 1
+       cont2 += 1
        if (cont2 == 3) {
-           alert=(`vous avez perdue`)
+           alert(`vous avez perdue`)
            break
+       }
+       else if (reponse2 == `n`) {
+        monster.pointDeVie =0
+        alert(`bien joue`)
        }
       }
            break;
@@ -160,74 +167,25 @@ let enigme = ()=>{
        case 3:
            let reponse3= prompt("Qu'est-ce qui n'est pas vivant mais qui grandi, n'a pas de poumon mais a besoin d'air, et meurt sous l'eau ?")
            let cont3 = 1
-          while (reponse =! `feu`) {
+          while (reponse3 != `feu`) {
            reponse2 = prompt("Qu'est-ce qui n'est pas vivant mais qui grandi, n'a pas de poumon mais a besoin d'air, et meurt sous l'eau ?")
-           cont3 =+ 1
+           cont3 += 1
            if (cont3 == 3) {
-               alert=(`vous avez perdue`)
+               alert(`vous avez perdue`)
                break
+           }
+           else if (reponse3 == `feu`) {
+            monster.pointDeVie =0
+            alert(`bien joue`)
            }
           }
            break;
     
-       default:
-           break;
+       
     }
    }
 
 
-let combat =()=> {
-    while (monster.pointDeVie > 0) {
-        if (Class.guerrier.pointDeVie < 1 && Class.mage.pointDeVie < 1 && Class.archer.pointDeVie < 1 ) {
-            alert(`vous avez perdu`)
-            break
-         }
-
-    
-
-
-
-
-    let positionG = prompt(`choisis la position de combat du guerrier attack/defense`)
-    Class.guerrier.postureDeCombat = positionG.toLowerCase()
-        switch (Class.guerrier.postureDeCombat) {
-            case 'defense':  
-        
-                if (Class.guerrier.pointDeVie > 0) {
-                    if (Class.guerrier.specialite = 7) {
-                        monster.pointDeVie -= (Class.guerrier.pointDeVie*1.2)   
-                        Class.guerrier.specialite = 0
-                      
-                        
-                    }
-                    else{
-                        monster.pointDeVie -= Class.guerrier.pointDattaque
-                      
-                    }
-                    
-        
-                }
-                break;
-            case "attack":
-        
-                if (Class.guerrier.pointDeVie > 0) {
-                    if (Class.guerrier.specialite = 7) {
-                        monster.pointDeVie -= (Class.guerrier.pointDeVie*1.4)   
-                        Class.guerrier.specialite = 0
-                        
-                    }
-                    else{
-                        monster.pointDeVie -= (Class.guerrier.pointDeVie +(Class.guerrier.pointDeVie*100/20)) 
-                    }
-                    
-        
-                }
-            break;
-            default:
-                break;
-        }
-       
-       
 
 
 
@@ -235,50 +193,90 @@ let combat =()=> {
 
 
 
+
+
+   let attackGerrier=()=>{
+
+
+    if (Class.guerrier.pointDeVie > 0) {
+        let positionG = prompt(`choisis la position de combat du guerrier attack/defense`)
+        Class.guerrier.postureDeCombat = positionG.toLowerCase()
+            switch (Class.guerrier.postureDeCombat) {
+                case 'defense':  
             
-    let positionM = prompt(`choisis la position de combat du guerrier attack/defense`)
-    Class.mage.postureDeCombat = positionM.toLowerCase()
-        switch (Class.mage.postureDeCombat) {
-            case 'defense':
-                if (Class.mage.pointDeVie > 0) {
-                    if (Class.mage.specialite = 0) {
-                        alert(`le mage recharge`)
-                        Class.mage.specialite = 7
-                        
-                    }
-                    else{
-                        monster.pointDeVie -= Class.mage.pointDattaque
-                    }
                     
-        
-                }
-                break;
-            case "attack":
-               
-                
-        
-                if (Class.guerrier.pointDeVie > 0) {
-                    if (Class.mage.pointDeVie > 0) {
-                        if (Class.mage.specialite = 0) {
-                            alert(`le mage recharge`)
-                            Class.mage.specialite = 7
+                alert(`${Class.guerrier.nom} se replie`)
+                        
+            
+                    
+                    break;
+                case "attack":
+            
+                   
+                        if (Class.guerrier.specialite = 7) {
+                            alert(`attack du phoenix...`)
+                            monster.pointDeVie -= (Class.guerrier.pointDeVie*1.4)   
+                            Class.guerrier.specialite = 0
                             
                         }
                         else{
-                            monster.pointDeVie -= (Class.mage.pointDattaque*1.2)
+                            monster.pointDeVie -= (Class.guerrier.pointDeVie +(Class.guerrier.pointDeVie*100/20)) 
                         }
                         
             
-                    }
-                }
-            break;
-            default:
+                    
                 break;
+                default:
+                    alert(`on as dit attack ou defense !!`)
+                    return attackGerrier();
+                   
+            }}
+   }
+
+
+
+
+
+
+
+
+
+   let attackMage = () =>{
+
+    if (Class.mage.pointDeVie > 0) {        
+        let positionM = prompt(`choisis la position de combat du guerrier attack/defense`)
+        Class.mage.postureDeCombat = positionM.toLowerCase()
+            switch (Class.mage.postureDeCombat) {
+                case 'defense':
+                    
+                alert(`${Class.mage.nom} se replie`)
+                        
+            
+                    
+                    break;
+                case "attack":
+                   
+                    
+        
+                            if (Class.mage.specialite == 0) {
+                                alert(`le mage recharge`)
+                                Class.mage.specialite = 7
+                                
+                            }
+                            else{
+                                monster.pointDeVie -= (Class.mage.pointDattaque*1.2)
+                            }
+                            
+                
+                        
+                    
+                break;
+                default:
+                    alert(`on as dit attack ou defense !!`)
+                    return attackMage();
+            }
         }
-       
-
-       
-      
+   }
 
 
 
@@ -286,33 +284,28 @@ let combat =()=> {
 
 
 
+   let attackArcher = ()=>{
 
 
+    if (Class.archer.pointDeVie > 0) {
         let positionA = prompt(`choisis la position de combat du guerrier attack/defense `)
         Class.archer.postureDeCombat = positionA.toLowerCase()
             switch (Class.archer.postureDeCombat) {
                 case 'defense':
-                    if (Class.archer.pointDeVie > 0) {
-                        if (Class.archer.specialite =0 ) {
-                            alert(`l'archer recharge`)
-                            Class.archer.specialite = 6 
-                           
-                        }
-                        else{
-                            monster.pointDeVie -=  Class.archer.pointDattaque
-                        }
+                    
+                    
+                    alert(`${Class.archer.nom} se replie`)
                        
             
-                    }
+                    
                     break;
                 case "attack":
                    
                     
             
-                if (Class.archer.pointDeVie > 0) {
-                    if (Class.archer.specialite =0 ) {
+                    if (Class.archer.specialite == 0 ) {
                         alert(`l'archer recharge`)
-                        Class.archer.specialite = 6 
+                        Class.archer.specialite  = 6 
                        
                     }
                     else{
@@ -320,17 +313,14 @@ let combat =()=> {
                     }
                    
         
-                }
+                
                     
                 break;
                 default:
-                    break;
-            }
-
-
-      
-       
-
+                    alert(`on as dit attack ou defense !!`)
+                    return attackArcher();
+            }}
+   }
 
 
 
@@ -347,8 +337,33 @@ let combat =()=> {
 
 
 
+let pdvBoss = monster.pointDeVie
+let combat =()=> {
+    while (monster.pointDeVie > 0) {
 
 
+    
+       console.log(pdvBoss);
+        if (monster.pointDeVie <= (pdvBoss*0.2)) {
+            enigme()
+        }
+
+        if (monster.pointDeVie < 0) {
+
+            alert(`vous avez gagnez`)
+              break
+           
+        }
+
+
+        if (Class.guerrier.pointDeVie < 1 && Class.mage.pointDeVie < 1 && Class.archer.pointDeVie < 1 ) {
+            alert(`vous avez perdu`);
+            break
+         }
+
+         attackGerrier()
+         attackMage()
+         attackArcher()
 
 
         let random2 = Math.round(Math.random() * (3 - 1)) + 1;
@@ -362,27 +377,27 @@ let combat =()=> {
         else {
             if (random2 == 1) {
 
-                if (Class.archer.pointDeVie == 0) {
+                if (Class.guerrier.pointDeVie < 0) {
                     return random2
                 }
                 else{
-                    Class.archer.pointDeVie -= monster.pointDattaque
+                    Class.guerrier.pointDeVie -= monster.pointDattaque
                 }
                 
             }
             else if (random2 == 2) {
-                if (Class.mage.pointDeVie == 0) {
+                if (Class.archer.pointDeVie < 0) {
                     return random2
                 }
-                else{Class.mage.pointDeVie -= monster.pointDattaque}
+                else{Class.archer.pointDeVie -= monster.pointDattaque}
                 
             }
             else {
 
-                if (Class.guerrier.pointDeVie == 0) {
+                if (Class.mage.pointDeVie < 0) {
                     return random2
                 }
-                else{Class.guerrier.pointDeVie -= monster.pointDattaque}
+                else{Class.mage.pointDeVie -= monster.pointDattaque}
                 
             }
         }
@@ -391,18 +406,46 @@ let combat =()=> {
         Class.archer.specialite -=1
 
         alert(`point de vie du Boos :${monster.pointDeVie}`)
-        alert(`point de vie du Guerrier :${Class.guerrier.pointDeVie}`)
-        alert(`point de vie du mage :${Class.mage.pointDeVie}`)
-        alert(`point de vie de l'archer :${Class.archer.pointDeVie}`)
-        if (monster.pointDeVie < (monster.pointDeVie*0.2)) {
-            enigme()
+
+
+
+        if (Class.guerrier.pointDeVie > 0) {
+            alert(`point de vie du Guerrier :${Class.guerrier.pointDeVie}`)
         }
+        
+
+
+
+
+        if (Class.archer.pointDeVie > 0) {
+            alert(`point de vie de l'archer :${Class.archer.pointDeVie}`)
+        }
+        
+
+
+
+
+        if (Class.mage.pointDeVie > 0) {
+            alert(`point de vie du mage :${Class.mage.pointDeVie}`)
+        }                               
 
     }
     
 }
 
 combat()
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -8,8 +8,8 @@ export class Boss {
 
 
 export let Sauron = new Boss("Sauron",1050,18)
-export let Chronos = new Boss("Chronos",5050,19)
-export let Lilith = new Boss("Lilith",2050,16)
+export let Chronos = new Boss("Chronos",850,19)
+export let Lilith = new Boss("Lilith",950,16)
 
 
 
