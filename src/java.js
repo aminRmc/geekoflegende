@@ -122,15 +122,16 @@ let enigme = ()=>{ // take a random riddle
            
 
            reponse = prompt(`Qu'est-ce qui peut être dans la mer et dans le ciel ?`)
-           cont += 1
+           
            if (cont == 3) {
-               alert(`vous avez perdue`)
+               alert(`Utilise ses derniere ressource pour faire une invocation, le Dieu de la mort prends l'ame de vos combatant`)
                break
            }else if (reponse == `etoile`) {
             monster.pointDeVie =0
             alert(`bien joue`)
            }
           }
+          cont += 1
            break;
 
 
@@ -143,15 +144,16 @@ let enigme = ()=>{ // take a random riddle
        
 
        reponse2 = prompt("Qu'est-ce qui commence la nuit et termine le matin ?")
-       cont2 += 1
+       
        if (cont2 == 3) {
-           alert(`vous avez perdue`)
+        alert(`Utilise ses derniere ressource pour faire une invocation, le Dieu de la mort prends l'ame de vos combatant`)
            break
        }
        else if (reponse2 == `n`) {
         monster.pointDeVie =0
         alert(`bien joue`)
        }
+       cont2 += 1
       }
            break;
 
@@ -162,15 +164,16 @@ let enigme = ()=>{ // take a random riddle
            let cont3 = 1
           while (reponse3 != `feu`) {
            reponse2 = prompt("Qu'est-ce qui n'est pas vivant mais qui grandi, n'a pas de poumon mais a besoin d'air, et meurt sous l'eau ?")
-           cont3 += 1
+           
            if (cont3 == 3) {
-               alert(`vous avez perdue`)
+            alert(`Utilise ses derniere ressource pour faire une invocation, le Dieu de la mort prends l'ame de vos combatant`)
                break
            }
            else if (reponse3 == `feu`) {
             monster.pointDeVie =0
             alert(`bien joue`)
            }
+           cont3 += 1
           }
            break;
     
@@ -207,13 +210,14 @@ let enigme = ()=>{ // take a random riddle
             
                    
                         if (Class.guerrier.specialite = 7) {
-                            alert(`attack du phoenix...`)
-                            monster.pointDeVie -= (Class.guerrier.pointDeVie*1.4)   
+                            
+                            monster.pointDeVie -= (Class.guerrier.pointDeVie*1.40)   
                             Class.guerrier.specialite = 0
                             
                         }
                         else{
-                            monster.pointDeVie -= (Class.guerrier.pointDeVie +(Class.guerrier.pointDeVie*100/20)) 
+                            alert(`attack du phoenix...`)
+                            monster.pointDeVie -= (Class.guerrier.pointDeVie*1.20) 
                         }
                         
             
@@ -257,7 +261,7 @@ let enigme = ()=>{ // take a random riddle
                                 
                             }
                             else{
-                                monster.pointDeVie -= (Class.mage.pointDattaque*1.2)
+                                monster.pointDeVie -= (Class.mage.pointDattaque*1.20)
                             }
                             
                 
