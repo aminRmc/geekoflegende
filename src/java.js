@@ -210,7 +210,7 @@ let enigme = ()=>{ // take a random riddle
             
                    
                         if (Class.guerrier.specialite == 7) {
-                            alert(`attack du phoenix...`)
+                            alert(`le guerrier rage et fait une attack du phoenix...`)
                             monster.pointDeVie -= (Class.guerrier.pointDeVie*1.40)   
                             Class.guerrier.specialite = 0
                             
