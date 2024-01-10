@@ -25,6 +25,7 @@ let setperso =()=>{  //add the name,pv,pa of heros
         else(
             Class.mage.pointDeVie = +prompt( ` indique moi les pv de ${Class.mage.nom} `)
             
+            
         )
     
     
@@ -124,7 +125,7 @@ let enigme = ()=>{ // take a random riddle
            reponse = a.toLowerCase()
            reponse = prompt(`Qu'est-ce qui peut être dans la mer et dans le ciel ?`)
            
-           if (cont == 3) {
+           if (cont == 4) {
                alert(`Utilise ses derniere ressource pour faire une invocation, le Dieu de la mort prends l'ame de vos combatant`)
                Class.guerrier.pointDeVie = 0
                Class.archer.pointDeVie = 0
@@ -151,7 +152,7 @@ let enigme = ()=>{ // take a random riddle
 
        b = prompt("Qu'est-ce qui commence la nuit et termine le matin ?")
        let reponse2 = b.toLowerCase()
-       if (cont2 == 3) {
+       if (cont2 == 4) {
         alert(`Utilise ses derniere ressource pour faire une invocation, le Dieu de la mort prends l'ame de vos combatant`)
         Class.guerrier.pointDeVie = 0
         Class.archer.pointDeVie = 0
@@ -177,7 +178,7 @@ let enigme = ()=>{ // take a random riddle
            c = prompt("Qu'est-ce qui n'est pas vivant mais qui grandi, n'a pas de poumon mais a besoin d'air, et meurt sous l'eau ?")
            reponse3 = c.toLowerCase()
            
-           if (cont3 == 3) {
+           if (cont3 == 4) {
             alert(`Utilise ses derniere ressource pour faire une invocation, le Dieu de la mort prends l'ame de vos combatant`)
             Class.guerrier.pointDeVie = 0
             Class.archer.pointDeVie = 0
@@ -273,6 +274,7 @@ let enigme = ()=>{ // take a random riddle
                             if (Class.mage.specialite == 0) {
                                 alert(`le mage recharge`)
                                 Class.mage.specialite = 7
+                                monster.pointDeVie -= 0
                                 
                             }
                             else{
@@ -289,6 +291,7 @@ let enigme = ()=>{ // take a random riddle
                     return attackMage();
             }
         }
+   
    }
 
 
@@ -335,6 +338,8 @@ let enigme = ()=>{ // take a random riddle
                     return attackArcher();
             }}
    }
+
+
 
 
 
