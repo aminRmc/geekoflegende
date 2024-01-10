@@ -116,18 +116,23 @@ let enigme = ()=>{ // take a random riddle
 
     switch ( Math.round(Math.random() * (3 - 1)) + 1) {
        case 1:
-           let reponse = prompt(`Qu'est-ce qui peut être dans la mer et dans le ciel ?`)
+           let a
+           let reponse 
            let cont = 1
           while (reponse != `etoile`) {
            
-
+           reponse = a.toLowerCase()
            reponse = prompt(`Qu'est-ce qui peut être dans la mer et dans le ciel ?`)
            
            if (cont == 3) {
                alert(`Utilise ses derniere ressource pour faire une invocation, le Dieu de la mort prends l'ame de vos combatant`)
+               Class.guerrier.pointDeVie = 0
+               Class.archer.pointDeVie = 0
+               Class.mage.pointDeVie = 0
                break
            }else if (reponse == `etoile`) {
             monster.pointDeVie =0
+           
             alert(`bien joue`)
            }
           }
@@ -138,15 +143,19 @@ let enigme = ()=>{ // take a random riddle
        case 2:
            
 
-       let reponse2= prompt("Qu'est-ce qui commence la nuit et termine le matin ?")
+       let b 
+       let reponse2
        let cont2 = 1
       while (reponse2 != `n`) {
        
 
-       reponse2 = prompt("Qu'est-ce qui commence la nuit et termine le matin ?")
-       
+       b = prompt("Qu'est-ce qui commence la nuit et termine le matin ?")
+       let reponse2 = b.toLowerCase()
        if (cont2 == 3) {
         alert(`Utilise ses derniere ressource pour faire une invocation, le Dieu de la mort prends l'ame de vos combatant`)
+        Class.guerrier.pointDeVie = 0
+        Class.archer.pointDeVie = 0
+        Class.mage.pointDeVie = 0
            break
        }
        else if (reponse2 == `n`) {
@@ -160,17 +169,23 @@ let enigme = ()=>{ // take a random riddle
 
 
        case 3:
-           let reponse3= prompt("Qu'est-ce qui n'est pas vivant mais qui grandi, n'a pas de poumon mais a besoin d'air, et meurt sous l'eau ?")
+        let c
+           let reponse3
            let cont3 = 1
           while (reponse3 != `feu`) {
-           reponse2 = prompt("Qu'est-ce qui n'est pas vivant mais qui grandi, n'a pas de poumon mais a besoin d'air, et meurt sous l'eau ?")
+
+           c = prompt("Qu'est-ce qui n'est pas vivant mais qui grandi, n'a pas de poumon mais a besoin d'air, et meurt sous l'eau ?")
+           reponse3 = c.toLowerCase()
            
            if (cont3 == 3) {
             alert(`Utilise ses derniere ressource pour faire une invocation, le Dieu de la mort prends l'ame de vos combatant`)
+            Class.guerrier.pointDeVie = 0
+            Class.archer.pointDeVie = 0
+            Class.mage.pointDeVie = 0
                break
            }
            else if (reponse3 == `feu`) {
-            monster.pointDeVie =0
+            monster.pointDeVie = 0
             alert(`bien joue`)
            }
            cont3 += 1
